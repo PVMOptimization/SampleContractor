@@ -13,7 +13,139 @@
     animation: fadeIn 0.8s ease-in-out;
   }
 
-  @keyframes fadeIn {
+  @keyframes fadeIn {@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   Base styles (global)
+   ========================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Forms should be finger-friendly */
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevents iOS zoom */
+    min-height: 44px;
+    padding: 0.75rem;
+  }
+
+  /* Phone numbers should be huge and tappable */
+  a[href^="tel:"] {
+    font-size: 1.5rem; /* 24px */
+    font-weight: bold;
+    padding: 1rem 2rem;
+    display: inline-block;
+  }
+}
+
+/* =========================
+   Components (layout + structure)
+   ========================= */
+@layer components {
+  /* Mobile-friendly touch targets */
+  button,
+  a.button,
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Container max-width for readability */
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Responsive grid spacing */
+  .grid {
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      gap: 2rem;
+    }
+  }
+}
+
+/* =========================
+   Utilities (single-purpose)
+   ========================= */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out both;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out both;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out both;
+  }
+}
+
+/* =========================
+   Keyframes (global)
+   ========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
     from {
       opacity: 0;
       transform: translateY(20px);
