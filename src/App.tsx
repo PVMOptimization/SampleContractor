@@ -3,7 +3,7 @@ import Hero from './components/Hero';
 import TrustBadges from './components/TrustBadges';
 import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
-import Testimonials from './components/Testimonials';
+import TestimonialsSection from './components/TestimonialsSection';
 import Process from './components/Process';
 import ServiceArea from './components/ServiceArea';
 import EmergencyServices from './components/EmergencyServices';
