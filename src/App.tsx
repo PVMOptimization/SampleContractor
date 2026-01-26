@@ -20,11 +20,6 @@ const projectData = [
     after: '/after1.jpg',
     description: 'Roof replacement in Dallas',
   },
-  {
-    before: '/before2.jpg',
-    after: '/after2.jpg',
-    description: 'Storm damage repair',
-  },
 ];
 
 
@@ -38,7 +33,6 @@ function App() {
       <TrustBadges />
       <Services />
       <WhyChooseUs />
-      <Testimonials />
       <Process />
       <ServiceArea />
       <EmergencyServices />
@@ -49,6 +43,7 @@ function App() {
       <StickyCTA />
     </div>
   );
+  
 }
 
 export default App;
