@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustBadges from './components/TrustBadges';
@@ -16,6 +15,7 @@ import StickyCTA from './components/StickyCTA';
 import BeforeAfter from './components/BeforeAfter';
 import VideoTestimonial from './components/VideoTestimonial';
 import TrustindexWidget from './components/TrustindexWidget';
+import LoadingScreen from './components/LoadingScreen';
 
 const projectData = [
   {
@@ -25,26 +25,16 @@ const projectData = [
   },
 ];
 
-
 function App() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.trustindex.io/loader.js?840a12a63552195cea763d0ef4b';
-    script.defer = true;
-    script.async = true;
-    document.body.appendChild(script);
-    
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
   return (
     <div className="min-h-screen">
+      <LoadingScreen />
       <Header />
       <Hero />
-      <BeforeAfter projects={projectData} /> {/* NEW - did you add this? */}
-    <TrustindexWidget /> {/* REPLACE the section with this */}
-      <TestimonialsSection /> {/* Your testimonials */}
+      <BeforeAfter projects={projectData} />
+      <TrustindexWidget />
+      <TestimonialsSection />
+      
       {/* Video Testimonials Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -60,6 +50,7 @@ function App() {
           </div>
         </div>
       </section>
+      
       <TrustBadges />
       <Services />
       <WhyChooseUs />
@@ -73,7 +64,6 @@ function App() {
       <StickyCTA />
     </div>
   );
-  
 }
 
 export default App;
