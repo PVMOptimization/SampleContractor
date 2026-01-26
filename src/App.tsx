@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import ExitPopup from './components/ExitPopup';
 import StickyCTA from './components/StickyCTA';
 import BeforeAfter from './components/BeforeAfter';
+import VideoTestimonial from './components/VideoTestimonial';
 
 const projectData = [
   {
