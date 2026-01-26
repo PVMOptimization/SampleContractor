@@ -15,6 +15,7 @@ import ExitPopup from './components/ExitPopup';
 import StickyCTA from './components/StickyCTA';
 import BeforeAfter from './components/BeforeAfter';
 import VideoTestimonial from './components/VideoTestimonial';
+import TrustindexWidget from './components/TrustindexWidget';
 
 const projectData = [
   {
