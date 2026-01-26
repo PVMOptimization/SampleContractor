@@ -48,6 +48,8 @@ export default function Hero() {
         </div>
         <span className="font-bold text-secondary">⏱️10 Spots Availible for Februrary Projects:</span>
         <div>
+          <div>
+          </div>
           
         </div>
 
