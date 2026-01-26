@@ -20,7 +20,7 @@ const projectData = [
   {
     before: '/before1.jpg',
     after: '/after1.jpg',
-    description: 'Roof replacement in Dallas',
+    description: 'Replaced 2,400 sq ft roof in Plano - $8,500 total cost',
   },
 ];
 
