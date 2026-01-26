@@ -42,6 +42,10 @@ function App() {
       <Header />
       <Hero />
       <BeforeAfter projects={projectData} /> {/* NEW - did you add this? */}
+      {/* Trustindex Widget - it will load via the script above */}
+      <section className="py-8">
+        <div id="trustindex-widget"></div>
+      </section>
       <TestimonialsSection /> {/* Your testimonials */}
       {/* Video Testimonials Section */}
       <section className="py-16 bg-gray-50">
