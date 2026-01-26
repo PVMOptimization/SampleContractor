@@ -46,6 +46,7 @@ export default function Hero() {
           <span className="hidden sm:inline">•</span>
           <span>✓ Free Estimates</span>
         </div>
+        <span className="font-bold text-secondary">⏱️10 Spots Availible for Februrary Projects:</span>
         <div>
           
         </div>
