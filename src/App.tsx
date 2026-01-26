@@ -33,6 +33,8 @@ function App() {
       <ContactForm />
       <FinalCTA />
       <Footer />
+      <ExitPopup />
+      <StickyCTA />
     </div>
   );
 }
