@@ -46,6 +46,9 @@ export default function Hero() {
           <span className="hidden sm:inline">•</span>
           <span>✓ Free Estimates</span>
         </div>
+        <div>
+          
+        </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
