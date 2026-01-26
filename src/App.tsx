@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustBadges from './components/TrustBadges';
@@ -25,19 +26,22 @@ const projectData = [
 
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.trustindex.io/loader.js?840a12a63552195cea763d0ef4b';
+    script.defer = true;
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
       <BeforeAfter projects={projectData} /> {/* NEW - did you add this? */}
-      {/* Trustindex Widget */}
-<section className="py-8">
-  <div 
-    dangerouslySetInnerHTML={{
-      __html: `<script defer async src='https://cdn.trustindex.io/loader.js?840a12a63552195cea763d0ef4b'></script>`
-    }}
-  />
-</section>
       <TestimonialsSection /> {/* Your testimonials */}
       {/* Video Testimonials Section */}
       <section className="py-16 bg-gray-50">
