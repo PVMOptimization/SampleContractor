@@ -29,10 +29,10 @@ export default function Hero() {
 
         {/* Heading */}
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-          Premier Home Services
+          Emergency Roof Repairs - Same Day Service
           <br />
           <span className="text-secondary">
-            Emergency Repairs Within 24 hours
+            Licensed & Insured - Serving 500+ Austin homes since 2009
           </span>
         </h1>
 
