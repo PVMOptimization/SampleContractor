@@ -21,6 +21,8 @@ function App() {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <BeforeAfter projects={projectData} /> {/* NEW - did you add this? */}
+      <TestimonialsSection /> {/* Your testimonials */}
       <TrustBadges />
       <Services />
       <WhyChooseUs />
