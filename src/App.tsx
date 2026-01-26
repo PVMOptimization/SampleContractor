@@ -14,6 +14,20 @@ import ExitPopup from './components/ExitPopup';
 import StickyCTA from './components/StickyCTA';
 import BeforeAfter from './components/BeforeAfter';
 
+const projectData = [
+  {
+    before: '/before1.jpg',
+    after: '/after1.jpg',
+    description: 'Roof replacement in Dallas',
+  },
+  {
+    before: '/before2.jpg',
+    after: '/after2.jpg',
+    description: 'Storm damage repair',
+  },
+];
+
+
 function App() {
   return (
     <div className="min-h-screen">
