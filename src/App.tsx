@@ -30,6 +30,14 @@ function App() {
       <Header />
       <Hero />
       <BeforeAfter projects={projectData} /> {/* NEW - did you add this? */}
+      {/* Trustindex Widget */}
+<section className="py-8">
+  <div 
+    dangerouslySetInnerHTML={{
+      __html: `<script defer async src='https://cdn.trustindex.io/loader.js?840a12a63552195cea763d0ef4b'></script>`
+    }}
+  />
+</section>
       <TestimonialsSection /> {/* Your testimonials */}
       {/* Video Testimonials Section */}
       <section className="py-16 bg-gray-50">
