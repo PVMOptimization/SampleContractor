@@ -10,8 +10,6 @@ import EmergencyServices from './components/EmergencyServices';
 import ContactForm from './components/ContactForm';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import ExitPopup from './components/ExitPopup';
 import StickyCTA from './components/StickyCTA';
 import BeforeAfter from './components/BeforeAfter';
