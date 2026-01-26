@@ -16,8 +16,8 @@ import BeforeAfter from './components/BeforeAfter';
 
 const projectData = [
   {
-    before: 'public/before1.jpg',
-    after: 'public/after1.jpg',
+    before: '/public/before1.jpg',
+    after: '/public/after1.jpg',
     description: 'Roof replacement in Dallas',
   },
 ];
