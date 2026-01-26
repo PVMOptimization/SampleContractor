@@ -32,7 +32,7 @@ export default function Hero() {
           Premier Home Services
           <br />
           <span className="text-secondary">
-            Expert Contractors You Can Trust
+            Emergency Repairs Within 24 hours
           </span>
         </h1>
 
