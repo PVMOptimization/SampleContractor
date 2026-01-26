@@ -32,7 +32,7 @@ export default function Hero() {
           Emergency Roof Repairs - Same Day Service
           <br />
           <span className="text-secondary">
-            Licensed & Insured - Serving 500+ Austin homes since 2009
+            Licensed & Insured - Serving 500+ Austin Homes Since 2009
           </span>
         </h1>
 
