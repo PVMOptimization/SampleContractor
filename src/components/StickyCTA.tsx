@@ -20,7 +20,8 @@ const StickyCTA: React.FC = () => {
         </span>
 
         {/* Buttons */}
-        <div className="flex gap-1.5 justify-start sm:justify-end -ml-4 sm:ml-0">
+        <div className="flex justify-start sm:justify-end -ml-4 sm:ml-0">
+          {/* PRIMARY CTA (always visible) */}
           <a
             href="tel:5551234567"
             className="
@@ -38,14 +39,17 @@ const StickyCTA: React.FC = () => {
             📞 Call Now
           </a>
 
+          {/* SECONDARY CTA (desktop only) */}
           <a
             href="#contact"
             className="
+              hidden sm:inline-flex
+              ml-3
               border-2 border-white
               text-white hover:bg-white hover:text-[#1e3b8a]
-              px-3.5 py-1.5 sm:px-6 sm:py-2.5
+              px-6 py-2.5
               rounded-md
-              font-semibold text-[11px] sm:text-sm
+              font-semibold text-sm
               transition-all duration-200
               active:scale-95
               whitespace-nowrap
