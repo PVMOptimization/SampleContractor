@@ -36,7 +36,7 @@ const StickyCTA: React.FC = () => {
               whitespace-nowrap
             "
           >
-            📞 Call Now
+            📞 555-123-4567
           </a>
 
           {/* SECONDARY CTA (desktop only) */}
