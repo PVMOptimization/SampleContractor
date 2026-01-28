@@ -20,7 +20,7 @@ const StickyCTA: React.FC = () => {
         </span>
 
         {/* Buttons */}
-        <div className="flex justify-start sm:justify-end -ml-4 sm:ml-0">
+        <div className="flex justify-center sm:justify-end -ml-4 sm:ml-0">
           {/* PRIMARY CTA (always visible) */}
           <a
             href="tel:5551234567"
