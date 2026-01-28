@@ -20,16 +20,16 @@ const StickyCTA: React.FC = () => {
         </span>
 
         {/* Buttons */}
-        <div className="flex gap-2 justify-start sm:justify-end -ml-2 sm:ml-0">
+        <div className="flex gap-1.5 justify-start sm:justify-end -ml-4 sm:ml-0">
           <a
             href="tel:5551234567"
             className="
               bg-[#ff6b36] hover:bg-[#ff5722]
               text-white
-              px-4 py-2 sm:px-6 sm:py-2.5
-              rounded-lg
-              font-bold text-xs sm:text-sm
-              shadow-lg hover:shadow-xl
+              px-3.5 py-1.5 sm:px-6 sm:py-2.5
+              rounded-md
+              font-bold text-[11px] sm:text-sm
+              shadow-md hover:shadow-xl
               transition-all duration-200
               active:scale-95
               whitespace-nowrap
@@ -43,9 +43,9 @@ const StickyCTA: React.FC = () => {
             className="
               border-2 border-white
               text-white hover:bg-white hover:text-[#1e3b8a]
-              px-4 py-2 sm:px-6 sm:py-2.5
-              rounded-lg
-              font-semibold text-xs sm:text-sm
+              px-3.5 py-1.5 sm:px-6 sm:py-2.5
+              rounded-md
+              font-semibold text-[11px] sm:text-sm
               transition-all duration-200
               active:scale-95
               whitespace-nowrap
