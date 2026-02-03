@@ -1,23 +1,42 @@
 /** @type {import('tailwindcss').Config} */
-// tailwind.config.js
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: '#1e3a8a',
-        secondary: '#ff6b35',
-        success: '#10b981',
+        primary: '#1a1a1a',      // Deep charcoal
+        secondary: '#D4AF37',    // Gold
+        accent: '#B8960F',       // Darker gold
+        dark: '#0a0a0a',         // Deeper black
+        light: '#f5f5f5',        // Off-white
       },
-      fontSize: {
-        // Mobile-first font sizes
-        'hero-mobile': '2rem',      // 32px for mobile hero
-        'hero-desktop': '3rem',     // 48px for desktop hero
-        'cta-mobile': '1.125rem',   // 18px for mobile CTAs
-        'cta-desktop': '1.25rem',   // 20px for desktop CTAs
+      fontFamily: {
+        heading: ['Crimson Pro', 'serif'],
+        body: ['Inter', 'sans-serif'],
       },
-      spacing: {
-        'safe': 'max(1rem, env(safe-area-inset-left))', // For notch phones
+      animation: {
+        'fade-in': 'fadeIn 0.8s ease-out',
+        'slide-up': 'slideUp 0.6s ease-out',
+        'slide-in': 'slideIn 0.7s ease-out',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(30px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(-30px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 5px #D4AF37, 0 0 10px #D4AF37' },
+          '100%': { boxShadow: '0 0 10px #D4AF37, 0 0 20px #D4AF37, 0 0 30px #D4AF37' },
+        },
       },
     },
   },
