@@ -6,7 +6,7 @@ const TrustindexWidget: React.FC = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://cdn.trustindex.io/loader.js?840a12a63552195cea763d0ef4b';
+    script.src = 'https://cdn.trustindex.io/loader.js?2761049635269637e4269482259';
     script.defer = true;
     script.async = true;
 
