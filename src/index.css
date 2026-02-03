@@ -3,244 +3,85 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  * {
+    @apply font-body;
   }
-}
-
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-in-out;
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 
-  @keyframes fadeIn {@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* =========================
-   Base styles (global)
-   ========================= */
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  html,
   body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Forms should be finger-friendly */
-  input,
-  select,
-  textarea {
-    font-size: 16px; /* Prevents iOS zoom */
-    min-height: 44px;
-    padding: 0.75rem;
-  }
-
-  /* Phone numbers should be huge and tappable */
-  a[href^="tel:"] {
-    font-size: 1.5rem; /* 24px */
-    font-weight: bold;
-    padding: 1rem 2rem;
-    display: inline-block;
+    @apply bg-light text-primary antialiased;
   }
 }
 
-/* =========================
-   Components (layout + structure)
-   ========================= */
 @layer components {
-  /* Mobile-friendly touch targets */
-  button,
-  a.button,
-  input[type="submit"] {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 0.75rem 1.5rem;
+  /* Glassmorphism Cards */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl;
   }
 
-  /* Container max-width for readability */
-  .container {
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .glass-card-dark {
+    @apply bg-primary/60 backdrop-blur-lg border border-secondary/30 rounded-2xl;
   }
 
-  @media (min-width: 768px) {
-    .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
+  /* Premium Buttons */
+  .btn-primary {
+    @apply bg-gradient-to-r from-secondary via-accent to-secondary bg-[length:200%_100%] 
+           text-primary px-8 py-4 rounded-xl font-bold text-lg 
+           shadow-[0_8px_20px_rgba(212,175,55,0.3)] 
+           transition-all duration-300 
+           hover:bg-[position:100%_0] hover:shadow-[0_12px_30px_rgba(212,175,55,0.5)] 
+           hover:scale-105 hover:-translate-y-1;
   }
 
-  /* Responsive grid spacing */
-  .grid {
-    gap: 1rem;
+  .btn-secondary {
+    @apply border-2 border-secondary text-secondary px-8 py-4 rounded-xl font-bold text-lg 
+           backdrop-blur-sm bg-secondary/5
+           transition-all duration-300 
+           hover:bg-secondary hover:text-primary 
+           hover:shadow-[0_8px_20px_rgba(212,175,55,0.3)]
+           hover:scale-105;
   }
 
-  @media (min-width: 768px) {
-    .grid {
-      gap: 2rem;
-    }
-  }
-}
-
-/* =========================
-   Utilities (single-purpose)
-   ========================= */
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-in-out both;
+  /* Gold Star Effect */
+  .star-gold {
+    @apply text-secondary drop-shadow-[0_0_8px_rgba(212,175,55,0.6)];
   }
 
-  .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out both;
+  /* Section Divider Wave */
+  .wave-divider {
+    position: relative;
   }
 
-  .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out both;
+  .wave-divider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23f5f5f5'/%3E%3C/svg%3E") no-repeat;
+    background-size: cover;
   }
-}
 
-/* =========================
-   Keyframes (global)
-   ========================= */
-@keyframes fadeIn {
-  from {
+  /* Scroll Animations */
+  .fade-in-up {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s ease-out forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
+  @keyframes fadeInUp {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out;
-  }
-
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out;
-  }
-
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  /* Prevent horizontal scroll */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-/* Ensure all images are responsive */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Mobile-friendly touch targets (minimum 44x44px) */
-button, a.button, input[type="submit"] {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0.75rem 1.5rem;
-}
-
-/* Phone numbers should be huge and tappable on mobile */
-a[href^="tel:"] {
-  font-size: 1.5rem; /* 24px */
-  font-weight: bold;
-  padding: 1rem 2rem;
-  display: inline-block;
-}
-
-/* Forms should be finger-friendly */
-input, select, textarea {
-  font-size: 16px; /* Prevents iOS zoom on focus */
-  min-height: 44px;
-  padding: 0.75rem;
-}
-
-/* Container max-width for readability */
-.container {
-  max-width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* Responsive grid spacing */
-.grid {
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .grid {
-    gap: 2rem;
-  }
-}
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
 }
