@@ -1,5 +1,5 @@
-// src/components/ExitPopup.tsx
 import { useEffect, useState } from 'react';
+import { X, Gift, CheckCircle, Shield, Clock, Star } from 'lucide-react';
 
 const ExitPopup: React.FC = () => {
   const [show, setShow] = useState(false);
@@ -56,7 +56,7 @@ const ExitPopup: React.FC = () => {
   };
 
   const handleClaim = () => {
-    window.location.href = '#contact';
+    window.location.href = '#contact-form';
     handleClose();
   };
 
@@ -64,118 +64,159 @@ const ExitPopup: React.FC = () => {
 
   return (
     <>
-      {/* Backdrop with blur */}
+      {/* Premium Backdrop with Gradient Overlay */}
       <div 
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-gradient-to-br from-primary/95 via-dark/90 to-primary/95 
+                   backdrop-blur-md z-50 transition-opacity duration-500 ${
           isClosing ? 'opacity-0' : 'opacity-100'
         }`}
         onClick={handleClose}
-      />
+      >
+        {/* Animated Background Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-[100px] animate-pulse" />
+      </div>
 
-      {/* Popup container */}
+      {/* Popup Container */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
         <div 
-          className={`relative bg-white rounded-2xl shadow-2xl max-w-lg w-full pointer-events-auto overflow-hidden transition-all duration-300 ${
-            isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
+          className={`relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full pointer-events-auto 
+                     overflow-hidden transition-all duration-500 ${
+            isClosing ? 'scale-90 opacity-0 rotate-3' : 'scale-100 opacity-100 rotate-0'
           }`}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Decorative top bar */}
-          <div className="h-2 bg-gradient-to-r from-[#1e3b8a] via-[#ff6b36] to-[#1e3b8a]" />
+          {/* Premium Gradient Top Bar with Shimmer Effect */}
+          <div className="h-3 bg-gradient-to-r from-secondary via-yellow-400 to-secondary bg-[length:200%_100%] animate-[shimmer_3s_ease_infinite]" />
 
-          {/* Close button */}
+          {/* Close Button - Premium Style */}
           <button
             onClick={handleClose}
-            className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors z-10"
+            className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center 
+                     rounded-full bg-gray-100 hover:bg-secondary/10 border-2 border-gray-200 
+                     hover:border-secondary transition-all duration-300 z-10 
+                     hover:scale-110 hover:rotate-90 group"
             aria-label="Close popup"
           >
-            <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X className="w-5 h-5 text-gray-600 group-hover:text-secondary transition-colors" />
           </button>
 
           {/* Content */}
-          <div className="p-8 md:p-10">
-            {/* Icon */}
-            <div className="mb-6 flex justify-center">
+          <div className="p-8 md:p-12">
+            
+            {/* Premium Icon with Glow */}
+            <div className="mb-8 flex justify-center">
               <div className="relative">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#ff6b36] to-[#ff8c5a] rounded-full flex items-center justify-center shadow-lg">
-                  <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                  </svg>
+                <div className="w-24 h-24 bg-gradient-to-br from-secondary to-accent rounded-full 
+                              flex items-center justify-center shadow-[0_0_40px_rgba(212,175,55,0.4)]">
+                  <Gift className="w-12 h-12 text-white animate-bounce" />
                 </div>
-                {/* Pulsing ring */}
-                <div className="absolute inset-0 bg-[#ff6b36] rounded-full animate-ping opacity-20" />
+                {/* Pulsing rings */}
+                <div className="absolute inset-0 bg-secondary rounded-full animate-ping opacity-20" />
+                <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-10" 
+                     style={{ animationDelay: '0.5s' }} />
               </div>
             </div>
 
-            {/* Headline */}
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e3b8a] mb-4 text-center leading-tight">
-              Wait! Special Offer 🎁
+            {/* Headline - Premium Typography */}
+            <h2 className="text-4xl md:text-5xl font-heading font-black text-primary mb-4 text-center leading-tight">
+              Wait! Don't Miss This
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
+                Special Offer 🎁
+              </span>
             </h2>
 
+            {/* Discount Badge */}
+            <div className="flex justify-center mb-6">
+              <div className="inline-block px-8 py-4 rounded-2xl 
+                            bg-gradient-to-r from-secondary to-accent
+                            shadow-[0_0_30px_rgba(212,175,55,0.4)]
+                            transform rotate-2">
+                <p className="text-primary font-heading font-black text-3xl md:text-4xl">
+                  10% OFF
+                </p>
+                <p className="text-primary/80 font-bold text-sm">
+                  Your First Project
+                </p>
+              </div>
+            </div>
+
             {/* Subheadline */}
-            <p className="text-lg text-gray-700 mb-2 text-center font-medium">
-              Get <span className="text-[#ff6b36] font-bold text-2xl">10% OFF</span> Your First Project
-            </p>
-            <p className="text-gray-600 mb-8 text-center">
+            <p className="text-lg text-gray-600 mb-8 text-center font-medium">
               Limited time offer for new customers only
             </p>
 
-            {/* Benefits list */}
-            <div className="mb-8 space-y-3">
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#ff6b36]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4 text-[#ff6b36]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
+            {/* Premium Benefits List */}
+            <div className="mb-10 space-y-4 max-w-lg mx-auto">
+              {[
+                { icon: Clock, text: 'Free detailed estimate within 24 hours' },
+                { icon: Shield, text: 'Licensed & $2M insured professionals' },
+                { icon: Star, text: '100% satisfaction guarantee or money back' },
+              ].map((benefit, idx) => (
+                <div 
+                  key={idx}
+                  className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-secondary/5 to-accent/5
+                           border-2 border-secondary/20 hover:border-secondary/40 
+                           transition-all duration-300 hover:scale-105"
+                >
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent 
+                                flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-gray-700 font-medium leading-relaxed pt-2">
+                    {benefit.text}
+                  </span>
                 </div>
-                <span className="text-gray-700">Free detailed estimate within 24 hours</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#ff6b36]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4 text-[#ff6b36]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span className="text-gray-700">Licensed & insured professionals</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#ff6b36]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-4 h-4 text-[#ff6b36]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span className="text-gray-700">100% satisfaction guarantee</span>
-              </div>
+              ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="space-y-3">
+            {/* Premium CTA Buttons */}
+            <div className="space-y-4">
               <button
                 onClick={handleClaim}
-                className="w-full bg-[#ff6b36] hover:bg-[#ff5722] text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                className="w-full bg-gradient-to-r from-secondary via-accent to-secondary 
+                         bg-[length:200%_100%] hover:bg-[position:100%_0]
+                         text-primary font-heading font-black py-5 px-8 rounded-xl 
+                         shadow-[0_10px_40px_rgba(212,175,55,0.4)] 
+                         hover:shadow-[0_15px_50px_rgba(212,175,55,0.6)] 
+                         transform hover:scale-105 active:scale-95 
+                         transition-all duration-300 text-lg md:text-xl
+                         border-2 border-accent"
               >
-                Claim My 10% Discount Now
+                Claim My 10% Discount Now →
               </button>
+              
               <button
                 onClick={handleClose}
-                className="w-full text-gray-500 hover:text-gray-700 py-2 text-sm font-medium transition-colors"
+                className="w-full text-gray-500 hover:text-gray-700 py-3 text-sm font-medium 
+                         transition-colors underline decoration-gray-300 hover:decoration-gray-500"
               >
                 No thanks, I'll pay full price
               </button>
             </div>
 
-            {/* Trust badge */}
-            <div className="mt-6 pt-6 border-t border-gray-200 flex items-center justify-center gap-2 text-sm text-gray-600">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span>Offer valid for new customers only</span>
+            {/* Trust Badge with Premium Styling */}
+            <div className="mt-8 pt-6 border-t-2 border-secondary/20 
+                          flex items-center justify-center gap-3 text-sm">
+              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                <CheckCircle className="w-5 h-5 text-green-600" />
+              </div>
+              <span className="text-gray-600 font-medium">
+                Offer valid for new customers • Expires in 24 hours
+              </span>
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes shimmer {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </>
   );
 };
